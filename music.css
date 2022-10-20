@@ -1,0 +1,251 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: Roboto;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.music-table {
+  /* Change later for responsiveness */
+  width: 828px;
+  /* height: 366px; */
+
+  display: flex;
+  gap: 43px;
+
+  background: #f4f4f4;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 40px 60px rgba(54, 48, 116, 0.3);
+  border-radius: 60px;
+
+  padding: 40px;
+
+  z-index: 2;
+}
+
+.album-art-container {
+  /* Change later for responsiveness */
+  width: 285px;
+
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e3e3e3, #f8f8f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #f8f8f8;
+}
+
+.album-art {
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.music-controls {
+  padding: 40px;
+
+  /* Change later for responsiveness */
+  width: 828px;
+  height: 350px;
+
+  border-radius: 60px;
+  background: #f0f0f0;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 40px 60px rgba(65, 44, 100, 0.3);
+  padding-top: 150px;
+
+  position: relative;
+  top: -100px;
+  z-index: 1;
+}
+
+.music-timing {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #aa9bbe;
+}
+
+.music-controls-seek_bar_container,
+.music-controls-buttons {
+  z-index: 1;
+}
+
+.seek-bar {
+  width: 100%;
+}
+
+.music-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.music-meta_playing {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #d0d1db;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+
+.music-meta_playing-headings-container {
+  /* background-color: rgba(84, 0, 220, 0.3); */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.music-meta_name {
+  font-size: 32px;
+  color: #86748d;
+  font-weight: 700;
+  margin: 0px;
+}
+
+.music-meta_film {
+  font-size: 24px;
+  color: #86748d;
+  color: #beb7c0;
+  margin: 0px;
+}
+
+.music-meta_artist {
+  font-size: 18px;
+  color: #86748d;
+  font-weight: 700;
+  color: #beb7c0;
+  margin: 0px;
+}
+
+.music-controls-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fa-random,
+.fa-repeat {
+  color: #c7c5d0;
+}
+
+.prev-track,
+.playpause-track,
+.next-track {
+  color: white;
+  width: 60px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    159.16deg,
+    #917ce4 26.46%,
+    rgba(63, 45, 137, 0) 116.55%
+  );
+  box-shadow: inset 10px 10px 15px rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0px 10px 10px rgba(55, 46, 152, 0.65));
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-track-container,
+.playpause-track-container,
+.next-track-container {
+  width: 80px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f8f8f8;
+  /* base */
+
+  box-shadow: -10px -10px 15px #ffffff, 10px 10px 10px rgba(0, 0, 0, 0.05),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.05), inset -10px -10px 20px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.prev-track-container:hover,
+.playpause-track-container:hover,
+.next-track-container:hover {
+  transform: scale(1.1);
+  
+}
+
+.playpause-track-container {
+  width: 100px;
+}
+
+.playpause-track {
+  width: 80px;
+}
+
+.seek-bar {
+  /* box-sizing: content-box; */
+  height: 15px;
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 15px;
+
+  background: #dedde3;
+  box-shadow: -3px -3px 5px #ffffff, 3px 3px 5px rgba(0, 0, 0, 0.05),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.05), inset -3px -3px 5px #ffffff;
+  border-radius: 37px;
+  /* z-index: 3; */
+
+  overflow: visible;
+}
+.seek-bar::-webkit-slider-thumb {
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid #ffffff;
+
+  background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
+}
+
+.music-controls-seek_bar_container {
+  position: relative;
+}
+
+.seek-bar-filled {
+  background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
+  box-shadow: 0px 2px 3px rgba(43, 72, 180, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.4);
+  height: 7.94px;
+  border-radius: 31px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  /* z-index: 1; */
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="music.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="music-table">
+      <div class="album-art-container">
+        <img
+          class="album-art"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_yMat3lcIXchD-jFwyEiASZnk4K_sHSRFQ&usqp=CAU"
+          alt=""
+        />
+      </div>
+      <div class="music-meta">
+        <p class="music-meta_playing">Now Playing</p>
+        <div class="music-meta_playing-headings-container">
+          <h2 class="music-meta_name">Purple Haze</h2>
+          <p class="music-meta_film">Jimi Hendrix</p>
+          <p class="music-meta_artist">Woodstock</p>
+        </div>
+      </div>
+    </div>
+    <div class="music-controls">
+      <div class="music-controls-seek_bar_container">
+        <div class="seek-bar-filled"></div>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="0"
+          class="seek-bar"
+          onchange="seekTo()"
+        />
+        <div class="music-timing">
+          <p class="start-time">0:00</p>
+          <p class="end-time">0:00</p>
+        </div>
+      </div>
+
+      <div class="music-controls-buttons">
+        <div class="random-track" onclick="randomTrack()">
+          <i class="fas fa-random fa-2x" title="random"></i>
+        </div>
+
+        <div class="prev-track-container" onclick="prevTrack()">
+          <div class="prev-track">
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+        </div>
+        <div class="playpause-track-container" onclick="playpauseTrack()">
+          <div class="playpause-track">
+            <i class="fa fa-play fa-3x"></i>
+          </div>
+        </div>
+        <div class="next-track-container" onclick="nextTrack()">
+          <div class="next-track"><i class="fa fa-step-forward fa-2x"></i></div>
+        </div>
+        <div class="repeat-track" onclick="repeatTrack()">
+          <i class="fa fa-repeat fa-2x" title="repeat"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const seekBar = document.querySelector(".seek-bar");
+      const seekBarFilled = document.querySelector(".seek-bar-filled");
+      seekBarFilled.style.width = seekBar.value - 1 + "%";
+      seekBar.oninput = function () {
+        const seekBarFilled = document.querySelector(".seek-bar-filled");
+        seekBarFilled.style.width = this.value - 1 + "%";
+      };
+    </script>
+
+    <script src="music-player.js"></script>
+  </body>
+</html>
